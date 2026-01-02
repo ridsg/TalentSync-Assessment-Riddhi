@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riddhi S. Ganjave | Digital Portfolio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Outfit:wght@500;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --bg: #020617;
+            --card: rgba(15, 23, 42, 0.95);
+            --neon: #00f3ff;
+            --text-dim: #94a3b8;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+.text-info {
+    color: var(--neon) !important;
+    text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+}
+.transition i {
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+.transition:hover i {
+    transform: scale(1.2);
+    text-shadow: 0 0 15px var(--neon);
+}
+        #tsparticles {
+            position: fixed; width: 100%; height: 100%;
+            z-index: -1; top: 0; left: 0;
+        }
+
+       #cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0, 243, 255, 0.09) 0%, transparent 60%);
+    border-radius: 50%;
+    pointer-events: none; 
+    transform: translate(-50%, -50%);
+    z-index: 9999; 
+    transition: opacity 0.3s ease;
+}
+
+        h1, h2, h3, h4, h5, .nav-link, .modal-title { font-family: 'Outfit', sans-serif; }
+
+        .navbar {
+            background: rgba(2, 6, 23, 0.98);
+            border-bottom: 1px solid rgba(0, 243, 255, 0.15);
+            padding: 15px 0;
+            z-index: 1000;
+        }
+        .nav-link { font-weight: 500; color: #fff !important; margin-left: 20px; transition: 0.3s; }
+        .nav-link:hover { color: var(--neon) !important; }
+
+        .photo-container { position: relative; width: 320px; height: 320px; margin: 0 auto; }
+        .profile-img {
+            position: relative; width: 100%; height: 100%; border-radius: 50%;
+            object-fit: cover; border: 5px solid var(--neon); z-index: 2;
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.2);
+        }
+
+        .typing-box { color: var(--neon); font-family: 'Outfit', sans-serif; font-weight: 700; }
+
+        .timeline { border-left: 2px solid var(--neon); padding-left: 30px; }
+        .timeline-item { position: relative; margin-bottom: 40px; }
+        .timeline-item::before {
+            content: ''; position: absolute; left: -41px; top: 5px;
+            width: 20px; height: 20px; background: var(--bg);
+            border: 3px solid var(--neon); border-radius: 50%;
+        }
+
+        .neon-card {
+            background: var(--card); border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px; padding: 35px; height: 100%; transition: 0.4s;
+        }
+        .neon-card:hover { border-color: var(--neon); transform: translateY(-5px); }
+
+        .modal-content { background: #0f172a; border: 1px solid var(--neon); border-radius: 24px; color: white; }
+        
+        section { padding: 100px 0; }
+        
+.main-footer { 
+    background: linear-gradient(to top, #0f172a, #020617); 
+    border-top: 1px solid rgba(255,255,255,0.1); 
+    padding: 80px 0 40px; 
+}
+
+.text-info-hover:hover i {
+    color: var(--neon) !important;
+    transform: scale(1.2);
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.neon-card {
+    background: var(--card);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 35px;
+    transition: 0.4s ease;
+}
+
+.neon-card:hover { 
+    border-color: var(--neon); 
+    transform: translateY(-10px); 
+    box-shadow: 0 10px 30px rgba(0, 243, 255, 0.2), 0 0 20px rgba(0, 243, 255, 0.1);
+}
+    </style>
+</head>
+<body>
+
+    <div id="tsparticles"></div>
+    <div id="cursor-glow"></div>
+
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+<a class="navbar-brand fw-bold fs-3" href="index.html">
+    PORT<span class="text-info">FOLIO</span>
+</a>            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">Academic</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-info" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="min-vh-100 d-flex align-items-center mt-5">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-7" data-aos="fade-right">
+                    <h5 class="text-info tracking-widest mb-3" style="letter-spacing: 0.2em;">HELLO, I AM</h5>
+                    <h1 class="display-1 fw-bold mb-3">Riddhi S. <br>Ganjave</h1>
+                    <h3 class="mb-4 fw-normal">Focused on learning <span id="typed" class="typing-box"></span></h3>
+                    
+                    <p class="lead text-dim mb-4">
+                        Final Year Computer Science student passionate about logic building, 
+                        automated workflows, and Web-based Developement. Currently working on high-performance 
+                        technical projects and targeting good institutions for 
+                        Engineering degree admissions.
+                    </p>
+                    
+                    <div class="d-flex gap-3">
+    <a href="#projects" class="btn btn-info btn-lg px-5 rounded-pill fw-bold border-0" 
+       style="background: var(--neon); color: #000 !important; box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);">
+       Case Studies
+    </a>
+    <a href="#contact" class="btn btn-outline-light btn-lg px-5 rounded-pill">Contact</a>
+</div>
+                </div>
+                <div class="col-lg-5 text-center" data-aos="zoom-in">
+                    <div class="photo-container">
+                        <img src="profile.jpeg" alt="Riddhi Ganjave" class="profile-img" onerror="this.src='https://via.placeholder.com/320/030712/00f3ff?text=RG'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="container">
+        <div class="row g-5">
+            <div class="col-md-6" data-aos="fade-up">
+                <h2 class="fw-bold mb-5">Academic & Career Path</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h5 class="text-info">GP Pune | Diploma Candidate</h5>
+                        <p>Studying at <strong>Government Polytechnic Pune (Autonomous)</strong>. <br> 
+                        Current Score: <span class="text-info fw-bold">84% in 5th Semester</span>.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="text-info">Future Goal | DSY Engineering</h5>
+                        <p>Focusing on a high final aggregate to secure <strong>Direct Second Year admission</strong> into well-known engineering colleges.</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h5 class="text-info">Freelance Content Curation</h5>
+                        <p>Managed professional digital branding and video editing.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="neon-card">
+                    <h2 class="h5 text-info mb-4">Technical Stack</h2>
+                    <p class="mb-2 small">Python & Automation (Flask, OpenCV)</p>
+                    <div class="progress mb-4 bg-dark" style="height: 7px;"><div class="progress-bar" style="width: 85%; background: var(--neon);"></div></div>
+                    <p class="mb-2 small">Android & Java (Android Studio, Firebase)</p>
+                    <div class="progress mb-4 bg-dark" style="height: 7px;"><div class="progress-bar" style="width: 80%; background: var(--neon);"></div></div>
+                    <p class="mb-2 small">Web Technologies (HTML, CSS, JS, MySQL)</p>
+                    <div class="progress bg-dark" style="height: 7px;"><div class="progress-bar" style="width: 90%; background: var(--neon);"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <section id="projects" class="container py-5">
+    <h2 class="fw-bold mb-5" data-aos="fade-right">Technical Projects</h2>
+    <div class="row g-4">
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="neon-card">
+                <i class="bi bi-person-bounding-box text-info fs-1"></i>
+                <h4 class="mt-3">Attendance AI</h4>
+                <p class="small text-dim">Facial Recognition system (Python/Flask).</p>
+                <a href="project1.html" class="btn btn-sm btn-outline-info rounded-pill">View Deep Dive</a>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="neon-card">
+                <i class="bi bi-droplet-half text-info fs-1"></i>
+                <h4 class="mt-3">GlowUp App</h4>
+                <p class="small text-dim">Skincare tracking & routine builder (Java).</p>
+                <a href="project2.html" class="btn btn-sm btn-outline-info rounded-pill">View Deep Dive</a>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="neon-card">
+                <i class="bi bi-activity text-info fs-1"></i>
+                <h4 class="mt-3">FitTrack AI</h4>
+                <p class="small text-dim">Health monitoring with Firebase sync.</p>
+                <a href="project3.html" class="btn btn-sm btn-outline-info rounded-pill">View Deep Dive</a>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up">
+            <div class="neon-card">
+                <i class="bi bi-box-seam text-info fs-1"></i>
+                <h4 class="mt-3">Boutique Pro</h4>
+                <p class="small text-dim">Inventory & Billing system (Web/MySQL).</p>
+                <a href="project4.html" class="btn btn-sm btn-outline-info rounded-pill">View Deep Dive</a>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="neon-card">
+                <i class="bi bi-shield-lock text-info fs-1"></i>
+                <h4 class="mt-3">Security Attendance</h4>
+                <p class="small text-dim">C++ Encryption based logging system.</p>
+                <a href="project5.html" class="btn btn-sm btn-outline-info rounded-pill">View Deep Dive</a>
+            </div>
+        </div>
+        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="neon-card">
+                <i class="bi bi-stars text-info fs-1"></i>
+                <h4 class="mt-3">Fashionista Web</h4>
+                <p class="small text-dim">Frontend branding for a boutique studio.</p>
+                <a href="project6.html" class="btn btn-sm btn-outline-info rounded-pill">View Deep Dive</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+   <footer id="contact" class="main-footer">
+    <div class="container">
+        <div class="neon-card p-5">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <h2 class="fw-bold mb-3">Let's build <br><span class="text-info">the future.</span></h2>
+                    <p class="text-dim">Available for collaboration and innovative projects.</p>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end">
+                    <div class="mb-2">
+                        <a href="mailto:riddhiganjwe@gmail.com" class="text-decoration-none">
+                            <i class="bi bi-envelope text-info me-2"></i> 
+                            <span class="text-dim">riddhiganjwe@gmail.com</span>
+                        </a>
+                    </div>
+                    <p class="mb-0"><i class="bi bi-geo-alt text-info me-2"></i> Pune, Maharashtra</p>
+                    <div class="fs-3 mt-4">
+                        <div class="fs-3 mt-4">
+    <a href="https://github.com/riddhi-ganjave" target="_blank" class="text-white text-info-hover text-decoration-none">
+        <i class="bi bi-github mx-3"></i>
+    </a> 
+    <a href="https://linkedin.com/in/riddhi-ganjave" target="_blank" class="text-white text-info-hover text-decoration-none">
+        <i class="bi bi-linkedin"></i>
+    </a>
+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+       tsParticles.load("tsparticles", {
+    particles: { 
+        number: { value: 80 }, 
+        color: { value: "#00f3ff" }, 
+        opacity: { 
+            value: 0.8, 
+            random: true 
+        }, 
+        size: { 
+            value: 4, 
+            random: true 
+        }, 
+        move: { 
+            enable: true, 
+            speed: 1.5, 
+            direction: "none",
+            outModes: { default: "out" }
+        },
+        shadow: {
+            enable: true,
+            color: "#00f3ff",
+            blur: 5
+        }
+    }
+});
+
+        const glow = document.getElementById('cursor-glow');
+    
+    window.addEventListener('mousemove', (e) => {
+        window.requestAnimationFrame(() => {
+            glow.style.left = e.clientX + 'px';
+            glow.style.top = e.clientY + 'px';
+        });
+    });
+
+    document.addEventListener('mouseleave', () => {
+        glow.style.opacity = '0';
+    });
+    document.addEventListener('mouseenter', () => {
+        glow.style.opacity = '5';
+    });
+
+AOS.init({ 
+    once: false,       
+    mirror: true,      
+    easing: 'ease-out-quart' 
+});            </script>
+</body>
+</html>
